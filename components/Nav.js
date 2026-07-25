@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav, socials } from "@/data/content";
+import { nav } from "@/data/content";
 
 export default function Nav() {
   const pathname = usePathname();
