@@ -7,7 +7,11 @@ export default function WorkPage() {
 
   return (
     <div>
-      <h1 className="text-2xl uppercase tracking-widest font-serif mb-8">Work</h1>
+      <h1 className="text-2xl uppercase tracking-widest font-serif mb-2">Work</h1>
+      <p className="text-ink/60 mb-10 max-w-xl">
+        Video, marketing, and event work — plus documentation from live shows and a
+        separate contemporary art practice in drawing and sculpture.
+      </p>
       <div className="grid sm:grid-cols-2 gap-8">
         {featured.map((w) => (
           <div key={w.id}>
@@ -25,16 +29,16 @@ export default function WorkPage() {
           Film / Video
         </Link>
         ,{" "}
-        <Link href="/exhibitions" className="underline">
-          Exhibitions
+        <Link href="/marketing-campaigns" className="underline">
+          Marketing Campaigns
         </Link>
         ,{" "}
-        <Link href="/sculpture" className="underline">
-          Sculpture
+        <Link href="/events" className="underline">
+          Events & Documentation
         </Link>
         , and{" "}
-        <Link href="/drawings" className="underline">
-          Drawings
+        <Link href="/contemporary-art" className="underline">
+          Contemporary Art
         </Link>
         .
       </p>

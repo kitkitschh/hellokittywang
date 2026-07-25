@@ -1,10 +1,9 @@
 export const nav = [
   { href: "/", label: "Work" },
-  { href: "/exhibitions", label: "Exhibitions" },
   { href: "/film-video", label: "Film / Video" },
-  { href: "/sculpture", label: "Sculpture" },
-  { href: "/drawings", label: "Drawings" },
   { href: "/marketing-campaigns", label: "Marketing Campaigns" },
+  { href: "/events", label: "Events & Documentation" },
+  { href: "/contemporary-art", label: "Contemporary Art" },
 ];
 
 export const socials = [
@@ -87,31 +86,33 @@ export const filmVideoWorks = [
   { id: "951801665", title: "Fuzz", year: "2022", medium: "Stop Motion Animation" },
 ];
 
-export const exhibitions = [
+export const marketingCampaigns = [
+  { client: "EasyHerb", date: "2024-2025", imageFolder: "marketing-campaigns/easyherb" },
+  { client: "GLO Studio", date: "2024", imageFolder: "marketing-campaigns/glo-studio" },
+];
+
+// Event photography + art show documentation — installation shots, opening
+// night, and behind-the-scenes coverage from her own shows and others.
+export const eventDocumentation = [
   {
     title: "SUPERSTAR SUPERSTAR death.",
     date: "April 2024",
     venue: "Cooper Union Great Hall Gallery",
     vimeoId: "951806554",
-    imageFolder: "exhibitions/superstar-superstar-death",
+    imageFolder: "events/superstar-superstar-death",
   },
   {
     title: "When Will You Play?",
     date: "November 2022",
     venue: "Cooper Union 41 Cooper Square Gallery",
-    imageFolder: "exhibitions/when-will-you-play",
+    imageFolder: "events/when-will-you-play",
   },
 ];
 
-export const marketingCampaigns = [
-  {
-    client: "EasyHerb",
-    date: "2024-2025",
-    imageFolder: "marketing/easyherb",
-  },
-  {
-    client: "GLO Studio",
-    date: "2024",
-    imageFolder: "marketing/glo-studio",
-  },
+export const eventPhotographyFolder = "events/event-photography";
+
+// Drawings + sculpture, framed separately as fine-art/gallery practice.
+export const contemporaryArt = [
+  { title: "Sculpture", slug: "sculpture", imageFolder: "contemporary-art/sculpture" },
+  { title: "Drawings", slug: "drawings", imageFolder: "contemporary-art/drawings" },
 ];
