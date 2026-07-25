@@ -1,21 +1,15 @@
 import Link from "next/link";
 import VimeoEmbed from "@/components/VimeoEmbed";
-import { InteractiveDots } from "@/components/ui/interactive-dots";
 import { filmVideoWorks } from "@/data/content";
 
 export default function WorkPage() {
   const featured = filmVideoWorks.slice(0, 4);
 
   return (
-    <div className="relative">
-      <div className="fixed inset-0 -z-10">
-        <InteractiveDots spacing={20} dotRadius={9} />
-      </div>
-
+    <div>
       <h1 className="text-2xl uppercase tracking-widest font-serif mb-2">Work</h1>
       <p className="text-ink/60 mb-10 max-w-xl">
-        Video, marketing, and event work — plus documentation from live shows and a
-        separate contemporary art practice in drawing and sculpture.
+        Video, marketing, and event work — plus documentation from her own exhibitions.
       </p>
       <div className="grid sm:grid-cols-2 gap-8">
         {featured.map((w) => (
