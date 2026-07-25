@@ -17,9 +17,14 @@ Then open http://localhost:3000
 Reorganized to center the site on marketing/video/event work first, with her own
 exhibitions kept separate under Contemporary Art:
 
-- `app/` — Work (home), Film/Video, Marketing Campaigns, Events & Documentation
-  (client/social event photography), Contemporary Art (exhibition documentation from
-  her own gallery shows only), About, CV, Contact.
+- `app/` — Work (home — full-bleed video reel hero), Film/Video, Marketing Campaigns,
+  Events & Documentation (client/social event photography), Contemporary Art
+  (exhibition documentation from her own gallery shows only), About, CV, Contact.
+- `public/videos/reel.mp4` — the homepage background reel. Not included yet; drop a
+  compressed file here (h.264 mp4, no audio needed since it autoplays muted, 1080p is
+  plenty, aim under ~15-20MB so the homepage loads quickly). Optionally add
+  `public/videos/reel-poster.jpg` as a fallback frame while it loads.
+  `components/VideoHero.js` is the component that renders it full-screen.
 - `data/content.js` — all text content + the Vimeo video IDs pulled from the live site.
   Edit this file to update bio, CV, video list, or gallery sections.
 - `public/images/<folder>` — web-ready photos live here and show up automatically on
