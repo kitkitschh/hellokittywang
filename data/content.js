@@ -102,13 +102,7 @@ export const eventPhotographyGalleries = [
 
 export const eventPhotographyFolder = "events/event-photography";
 
-// Drawings + sculpture, framed as fine-art/gallery practice, plus
-// documentation of her own exhibitions (installation shots, openings).
-export const contemporaryArt = [
-  { title: "Sculpture", slug: "sculpture", imageFolder: "contemporary-art/sculpture" },
-  { title: "Drawings", slug: "drawings", imageFolder: "contemporary-art/drawings" },
-];
-
+// Documentation of her own exhibitions (installation shots, openings).
 export const exhibitionDocumentation = [
   {
     title: "SUPERSTAR SUPERSTAR death.",

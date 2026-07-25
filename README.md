@@ -14,12 +14,12 @@ Then open http://localhost:3000
 
 ## Structure
 
-Reorganized to center the site on marketing/video/event work first, with drawing and
-sculpture kept as a separate contemporary-art practice:
+Reorganized to center the site on marketing/video/event work first, with her own
+exhibitions kept separate under Contemporary Art:
 
 - `app/` — Work (home), Film/Video, Marketing Campaigns, Events & Documentation
-  (client/social event photography), Contemporary Art (Drawings, Sculpture, and
-  Exhibitions — documentation from her own gallery shows), About, CV, Contact.
+  (client/social event photography), Contemporary Art (exhibition documentation from
+  her own gallery shows only), About, CV, Contact.
 - `data/content.js` — all text content + the Vimeo video IDs pulled from the live site.
   Edit this file to update bio, CV, video list, or gallery sections.
 - `public/images/<folder>` — web-ready photos live here and show up automatically on
@@ -27,7 +27,6 @@ sculpture kept as a separate contemporary-art practice:
   - `events/essence-unleashed-2025`, `events/boyscoutmarie-elsewhere-2026`,
     `events/passport-mudhouse-2024`, `events/social-parties` — named event galleries
   - `events/event-photography` — catch-all for other event photography
-  - `contemporary-art/drawings`, `contemporary-art/sculpture`
   - `contemporary-art/exhibitions/superstar-superstar-death`,
     `contemporary-art/exhibitions/when-will-you-play`,
     `contemporary-art/exhibitions/reflections-of-home` — exhibition documentation
@@ -43,8 +42,6 @@ sculpture kept as a separate contemporary-art practice:
 
 - `app/contact/page.js` has a placeholder email (`hello@hellokittywang.com`) — swap in
   your real contact address.
-- Sculpture and Drawings still have no images — drop originals into
-  `../media/contemporary-art/sculpture` or `../media/contemporary-art/drawings`.
 
 ## Push to GitHub
 
