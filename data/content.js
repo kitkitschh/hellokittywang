@@ -91,28 +91,42 @@ export const marketingCampaigns = [
   { client: "GLO Studio", date: "2024", imageFolder: "marketing-campaigns/glo-studio" },
 ];
 
-// Event photography + art show documentation — installation shots, opening
-// night, and behind-the-scenes coverage from her own shows and others.
-export const eventDocumentation = [
+// Event photography — client/social event coverage, separate from her own
+// gallery shows (those live under Contemporary Art > Exhibitions instead).
+export const eventPhotographyGalleries = [
+  { title: "Essence Unleashed", date: "2025", imageFolder: "events/essence-unleashed-2025" },
+  { title: "Boyscoutmarie: Elsewhere", date: "2026", imageFolder: "events/boyscoutmarie-elsewhere-2026" },
+  { title: "Passport Mudhouse Event", date: "2024", imageFolder: "events/passport-mudhouse-2024" },
+  { title: "Social Parties", date: "", imageFolder: "events/social-parties" },
+];
+
+export const eventPhotographyFolder = "events/event-photography";
+
+// Drawings + sculpture, framed as fine-art/gallery practice, plus
+// documentation of her own exhibitions (installation shots, openings).
+export const contemporaryArt = [
+  { title: "Sculpture", slug: "sculpture", imageFolder: "contemporary-art/sculpture" },
+  { title: "Drawings", slug: "drawings", imageFolder: "contemporary-art/drawings" },
+];
+
+export const exhibitionDocumentation = [
   {
     title: "SUPERSTAR SUPERSTAR death.",
     date: "April 2024",
     venue: "Cooper Union Great Hall Gallery",
     vimeoId: "951806554",
-    imageFolder: "events/superstar-superstar-death",
+    imageFolder: "contemporary-art/exhibitions/superstar-superstar-death",
   },
   {
     title: "When Will You Play?",
     date: "November 2022",
     venue: "Cooper Union 41 Cooper Square Gallery",
-    imageFolder: "events/when-will-you-play",
+    imageFolder: "contemporary-art/exhibitions/when-will-you-play",
   },
-];
-
-export const eventPhotographyFolder = "events/event-photography";
-
-// Drawings + sculpture, framed separately as fine-art/gallery practice.
-export const contemporaryArt = [
-  { title: "Sculpture", slug: "sculpture", imageFolder: "contemporary-art/sculpture" },
-  { title: "Drawings", slug: "drawings", imageFolder: "contemporary-art/drawings" },
+  {
+    title: "Reflections of Home",
+    date: "",
+    venue: "Living Space Group Show",
+    imageFolder: "contemporary-art/exhibitions/reflections-of-home",
+  },
 ];

@@ -18,19 +18,24 @@ Reorganized to center the site on marketing/video/event work first, with drawing
 sculpture kept as a separate contemporary-art practice:
 
 - `app/` — Work (home), Film/Video, Marketing Campaigns, Events & Documentation
-  (event photography + art show documentation), Contemporary Art (Drawings +
-  Sculpture as sub-pages), About, CV, Contact.
+  (client/social event photography), Contemporary Art (Drawings, Sculpture, and
+  Exhibitions — documentation from her own gallery shows), About, CV, Contact.
 - `data/content.js` — all text content + the Vimeo video IDs pulled from the live site.
   Edit this file to update bio, CV, video list, or gallery sections.
-- `public/images/<folder>` — drop exported photos here and they show up automatically
-  on the matching page:
-  - `events/event-photography` — general event photography
-  - `events/superstar-superstar-death`, `events/when-will-you-play` — art show documentation
+- `public/images/<folder>` — web-ready photos live here and show up automatically on
+  the matching page:
+  - `events/essence-unleashed-2025`, `events/boyscoutmarie-elsewhere-2026`,
+    `events/passport-mudhouse-2024`, `events/social-parties` — named event galleries
+  - `events/event-photography` — catch-all for other event photography
   - `contemporary-art/drawings`, `contemporary-art/sculpture`
+  - `contemporary-art/exhibitions/superstar-superstar-death`,
+    `contemporary-art/exhibitions/when-will-you-play`,
+    `contemporary-art/exhibitions/reflections-of-home` — exhibition documentation
   - `marketing-campaigns/easyherb`, `marketing-campaigns/glo-studio`
 
-  See `../media/` (one level up, outside this git repo) for a place to stage raw/original
-  files before exporting web-ready versions in here.
+  See `../media/` (one level up, outside this git repo) for the staging folder — drop
+  raw originals there and Claude will resize/compress a web copy into the matching
+  folder above.
 - `components/ImageGrid.js` — reads whatever images are in a `public/images/<folder>`
   at build time, no code changes needed to add photos.
 
@@ -38,9 +43,8 @@ sculpture kept as a separate contemporary-art practice:
 
 - `app/contact/page.js` has a placeholder email (`hello@hellokittywang.com`) — swap in
   your real contact address.
-- Every gallery page is wired up but has no images yet (the old site's images live on
-  Adobe's CDN and weren't accessible to copy directly) — export/drop photos into the
-  relevant `public/images/...` folder listed above.
+- Sculpture and Drawings still have no images — drop originals into
+  `../media/contemporary-art/sculpture` or `../media/contemporary-art/drawings`.
 
 ## Push to GitHub
 
