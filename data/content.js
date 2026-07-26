@@ -119,6 +119,10 @@ export const marketingCampaigns = [
         title: "GLO Studio Sample Sale Announcement",
         imageFolder: "marketing-campaigns/glo-studio/glo-studio-sample-sale-announcement",
       },
+      {
+        title: "Instagram Reels",
+        videos: [{ id: "1212968454", hash: "d667ecc380" }],
+      },
     ],
   },
 ];
