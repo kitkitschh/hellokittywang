@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqrlkaa";
@@ -33,6 +33,7 @@ export default function ContactForm() {
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const confettiCanvasRef = useRef(null);
 
   const update = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
@@ -79,27 +80,37 @@ export default function ContactForm() {
   }
 
   useEffect(() => {
-    if (status !== "sent") return;
-    confetti({
+    if (status !== "sent" || !confettiCanvasRef.current) return;
+    const fire = confetti.create(confettiCanvasRef.current, {
+      resize: true,
+      useWorker: true,
+    });
+    fire({
       particleCount: 90,
       spread: 75,
-      startVelocity: 35,
-      origin: { y: 0.6 },
+      startVelocity: 30,
+      origin: { y: 0.5 },
       colors: ["#141414", "#f7f5f1", "#c9a24b"],
     });
   }, [status]);
 
   if (status === "sent") {
     return (
-      <div className="py-8 text-center">
-        <p className="text-lg">Thanks — your message is on its way.</p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-4 text-sm uppercase tracking-wide underline"
-        >
-          Send another message
-        </button>
+      <div className="relative overflow-hidden rounded-lg py-8 text-center">
+        <canvas
+          ref={confettiCanvasRef}
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full"
+        />
+        <div className="relative z-10">
+          <p className="text-lg">Thanks — your message is on its way.</p>
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className="mt-4 text-sm uppercase tracking-wide underline"
+          >
+            Send another message
+          </button>
+        </div>
       </div>
     );
   }
