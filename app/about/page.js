@@ -20,7 +20,7 @@ export default function AboutPage() {
 
       <div className="max-w-2xl">
         <h1 className="text-2xl uppercase tracking-widest font-serif mb-8 text-white">About</h1>
-        <div className="prose-body text-[15px] leading-relaxed whitespace-pre-line text-white/90">
+        <div className="prose-body text-base leading-relaxed whitespace-pre-line text-white/90">
           {bio}
         </div>
       </div>

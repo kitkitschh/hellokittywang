@@ -4,7 +4,7 @@ export const metadata = { title: "Kitty Wang - CV" };
 
 export default function CVPage() {
   return (
-    <div className="max-w-2xl text-[15px] leading-relaxed">
+    <div className="max-w-2xl text-base leading-relaxed">
       <h1 className="text-2xl uppercase tracking-widest font-serif mb-2">CV</h1>
       <p className="text-ink/60 mb-8">{cv.location}</p>
 

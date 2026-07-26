@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <div className="max-w-md">
       <h1 className="text-2xl uppercase tracking-widest font-serif mb-8">Contact</h1>
-      <p className="mb-6 text-[15px]">
+      <p className="mb-6 text-base">
         Get in touch at{" "}
         <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
           {CONTACT_EMAIL}
