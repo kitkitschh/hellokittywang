@@ -35,6 +35,18 @@ export default function CVPage() {
         ))}
       </section>
 
+      <section className="mb-10">
+        <h2 className="uppercase text-sm tracking-widest font-medium mb-3">Skills</h2>
+        <div className="flex flex-col gap-3">
+          {cv.skills.map((group) => (
+            <p key={group.category}>
+              <span className="font-medium">{group.category}:</span>{" "}
+              <span className="text-ink/80">{group.items.join(", ")}</span>
+            </p>
+          ))}
+        </div>
+      </section>
+
       <section>
         <h2 className="uppercase text-sm tracking-widest font-medium mb-3">Work Experience</h2>
         <div className="flex flex-col gap-8">

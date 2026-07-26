@@ -28,6 +28,59 @@ export const cv = {
     { title: "Superstar Superstar death.", date: "May 2024", venue: "Great Hall Gallery (Solo Show)" },
     { title: "When Will You Play?", date: "November 2023", venue: "41 Cooper Gallery (Solo Show)" },
   ],
+  skills: [
+    {
+      category: "Design & Visual",
+      items: [
+        "Adobe Illustrator",
+        "Adobe Photoshop",
+        "Adobe InDesign",
+        "Adobe Premiere Pro",
+        "Adobe After Effects",
+        "Cinema 4D",
+        "DragonFrame (stop-motion animation)",
+        "Lightroom",
+        "Capture One",
+        "16mm film production",
+        "Photography",
+      ],
+    },
+    {
+      category: "Audio",
+      items: ["Reaper"],
+    },
+    {
+      category: "Social Media & Marketing",
+      items: [
+        "Content strategy",
+        "Social media management (Instagram, Twitter/X, YouTube, Pinterest)",
+        "Instagram Reels production",
+        "Campaign development",
+        "Copywriting",
+      ],
+    },
+    {
+      category: "Administrative & Operations",
+      items: [
+        "QuickBooks",
+        "Excel",
+        "Client / account management",
+        "Vendor & logistics coordination",
+        "International shipping & customs coordination",
+      ],
+    },
+    {
+      category: "Production & Research",
+      items: [
+        "Video production (pitch, plan, shoot, edit)",
+        "Archival & historical research",
+        "Livestreaming",
+        "Interview transcription",
+        "Digital asset management",
+        "Database management",
+      ],
+    },
+  ],
   experience: [
     {
       org: "Noreen Seabrook Marketing, Inc.",
