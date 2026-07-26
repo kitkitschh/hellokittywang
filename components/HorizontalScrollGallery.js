@@ -52,7 +52,7 @@ export default function HorizontalScrollGallery({ images = [] }) {
 
   if (images.length === 0) return null;
 
-  const scrollVh = Math.min(800, Math.max(300, images.length * 48));
+  const scrollVh = Math.min(900, Math.max(350, images.length * 58));
 
   return (
     <section ref={targetRef} className="relative" style={{ height: `${scrollVh}vh` }}>
