@@ -34,9 +34,9 @@ export const cv = {
       role: "Administrative and Design Assistant",
       date: "Jan 2025 (currently employed)",
       bullets: [
-        "Coordinate production with international mills and manage shipping logistics to ensure timely delivery and high-quality standards.",
-        "Design custom rugs and prepare visual assets using Adobe Illustrator and Photoshop to support client presentations and product development.",
-        "Handle administrative operations, including client communication, invoicing via QuickBooks, and monthly revenue reporting in Excel.",
+        "Coordinated production with 3 Nepalese mills, managing shipping logistics for 10-50 orders/month with an ~85% on-time delivery rate.",
+        "Designed custom rug mockups and visual assets for 15+ client presentations using Adobe Illustrator and Photoshop.",
+        "Managed invoicing via QuickBooks and monthly revenue reporting averaging $100,000/month over the past four months in Excel.",
       ],
     },
     {
@@ -44,9 +44,9 @@ export const cv = {
       role: "Sales Marketing Assistant",
       date: "May 2024 - Jan 2025",
       bullets: [
-        "Designing mockups for glass, LED, and other neon and lighting installations.",
-        "Photographing, filming, and editing products and events for sales assets and social media.",
-        "Assisting in planning marketing and advertising tactics on socials and magazines.",
+        "Designed mockups for 50+ neon, LED, and lighting installations across 20+ client campaigns.",
+        "Photographed, filmed, and edited content for 15+ events and product shoots, producing assets used across Instagram, Twitter, YouTube, Pinterest, and the website.",
+        "Contributed to marketing and advertising planning that grew social following to 24.6K with a 15% engagement increase, and secured features in 2 magazines/publications.",
       ],
     },
     {
@@ -54,9 +54,9 @@ export const cv = {
       role: "Club Receptionist",
       date: "June 2023 - Feb 2024",
       bullets: [
-        "Answering high volumes of phone calls and emails from members.",
-        "Assisting in organizing events and large party reservations for high profile clientele.",
-        "Creating spreadsheets of member based information to better understand and accommodate member needs.",
+        "Handled 30+ phone calls and emails daily from members.",
+        "Coordinated event and party reservations for groups of up to 150 guests, supporting 20+ events total.",
+        "Created spreadsheets of member-based information to better understand and accommodate member needs.",
       ],
     },
     {
@@ -64,9 +64,9 @@ export const cv = {
       role: "Digital Contents Intern",
       date: "Sep 2022 - Dec 2022",
       bullets: [
-        'Responsible for creating the internal database on the Jaune Quick-to-See Smith Exhibition.',
-        'Collaborated on production and editing of the "Ask a Curator" video for the Balance Exhibition and the Edward Hopper Exhibition.',
-        "Auditing the Whitney website for better flow and user friendliness.",
+        "Built the internal database for the Jaune Quick-to-See Smith exhibition, cataloging 70+ objects/records.",
+        'Produced and edited "Ask a Curator: In the Balance: Between Painting and Sculpture, 1965–1985" (1.7K views) and "Edward Hopper\'s New York" (10K views).',
+        "Audited the Whitney website, identifying 5 usability issues later addressed by the team.",
       ],
     },
   ],
