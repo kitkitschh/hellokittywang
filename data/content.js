@@ -11,13 +11,13 @@ export const socials = [
   { href: "https://vimeo.com/user220394171", label: "Vimeo" },
 ];
 
-export const bio = `Kitty Wang is a Chinese-American interdisciplinary artist based in Queens, NY, working across video, drawing, sculpture, and installation. Her practice explores the intersections of kitsch, femininity, and cultural perception—mining the aesthetics of mass media and domestic iconography to question how womanhood is constructed, consumed, and transformed across time.
+export const bio = `Kitty Wang is a Queens, NY-based creative professional working across production, marketing, and design. Her experience spans account management and vendor coordination in textile production, social media strategy and content creation for cannabis and wellness brands, and design and production support for lighting and event installations — bringing together organizational rigor, client-facing communication, and hands-on creative execution.
 
-Born and raised in Queens, NY, Wang is deeply influenced by the layered realities of American and Chinese cultural narratives. Her work navigates the shifting stereotypes of women in both contexts, reflecting on how media evolution shapes—and is shaped by—societal norms. Nature often threads through these explorations, serving as both a metaphor and counterpoint to the artificial landscapes of femininity.
+Alongside this professional work, Wang maintains an independent studio practice as an interdisciplinary artist, working across video, drawing, sculpture, and installation. Her practice explores the intersections of kitsch, femininity, and cultural perception, mining the aesthetics of mass media and domestic iconography to question how womanhood is constructed, consumed, and transformed across time.
 
-Wang is an alumna of the High School of Art and Design and The Cooper Union, where she was awarded the Robert Breer Film Award. Her solo exhibitions at Cooper Union, When Will You Play? and SUPERSTAR SUPERSTAR death., examined performance, persona, and the blurred boundaries between spectacle and self.
+Born and raised in Queens, NY, Wang is deeply influenced by the layered realities of American and Chinese cultural narratives, and her work navigates the shifting stereotypes of women in both contexts. Nature often threads through these explorations, serving as both a metaphor and counterpoint to the artificial landscapes of femininity.
 
-Through vibrant, satirical, and often uncanny juxtapositions, Kitty Wang invites viewers into spaces that are as disarming as they are familiar—spaces that ask us to reconsider what we see, what we believe, and why.`;
+Wang holds a BFA from The Cooper Union, where she was awarded the Robert Breer Film Award, and is also an alumna of the High School of Art and Design. Her solo exhibitions, When Will You Play? and SUPERSTAR SUPERSTAR death., examined performance, persona, and the blurred boundaries between spectacle and self — the same instinct for image-making and storytelling that carries into her production and marketing work today.`;
 
 export const cv = {
   location: "Based in Queens, NY",
