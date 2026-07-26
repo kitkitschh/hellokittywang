@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Lightbox from "@/components/Lightbox";
 
 // Pins the section while the page scrolls through it, translating a row of
 // photos horizontally. Each photo keeps its own natural aspect ratio (fixed
@@ -22,6 +23,7 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
   const containerRef = useRef(null);
   const rowRef = useRef(null);
   const [distance, setDistance] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const { scrollYProgress } = useScroll({ target: targetRef });
   const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
@@ -120,16 +122,30 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
         )}
         <div ref={containerRef} className="overflow-hidden">
           <motion.div ref={rowRef} style={{ x }} className="flex items-center gap-4">
-            {images.map((img) => (
-              <div key={img.src} className="h-[60vh] flex-shrink-0 bg-ink/5">
+            {images.map((img, i) => (
+              <button
+                key={img.src}
+                type="button"
+                onClick={() => setLightboxIndex(i)}
+                className="h-[60vh] flex-shrink-0 bg-ink/5 cursor-zoom-in"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img.src} alt={img.alt} className="h-full w-auto object-contain" />
-              </div>
+              </button>
             ))}
             <div className="flex-shrink-0 w-6" aria-hidden="true" />
           </motion.div>
         </div>
       </div>
+
+      <Lightbox
+        images={images}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onNavigate={(delta) =>
+          setLightboxIndex((i) => (i + delta + images.length) % images.length)
+        }
+      />
     </section>
   );
 }

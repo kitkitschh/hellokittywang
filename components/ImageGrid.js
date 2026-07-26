@@ -1,11 +1,12 @@
 import fs from "fs";
 import path from "path";
+import ImageGridView from "@/components/ImageGridView";
 
 // Reads images directly from /public/images/<folder> at build time so Kitty
 // can just drop exported files into the matching folder in the media dump
-// and they'll show up on the site automatically. Laid out as a masonry-style
-// grid (CSS columns) so each photo keeps its own original aspect ratio
-// instead of being cropped to a fixed shape.
+// and they'll show up on the site automatically. The actual grid rendering
+// (and click-to-expand lightbox) lives in the client-side ImageGridView,
+// since this part needs Node's fs and stays a plain server component.
 export default function ImageGrid({ folder, alt = "" }) {
   const dir = path.join(process.cwd(), "public", "images", folder);
   let files = [];
@@ -26,19 +27,7 @@ export default function ImageGrid({ folder, alt = "" }) {
     );
   }
 
-  return (
-    <div className="columns-2 md:columns-3 gap-4">
-      {files.map((f) => (
-        <div key={f} className="mb-4 break-inside-avoid bg-ink/5">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`/images/${folder}/${f}`}
-            alt={alt}
-            loading="lazy"
-            className="block w-full h-auto"
-          />
-        </div>
-      ))}
-    </div>
-  );
+  const images = files.map((f) => ({ src: `/images/${folder}/${f}`, alt }));
+
+  return <ImageGridView images={images} />;
 }
