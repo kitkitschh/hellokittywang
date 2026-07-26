@@ -11,7 +11,7 @@ export default function CVPage() {
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="lg:flex-[2] flex flex-col gap-10">
           <section>
-            <h2 className="uppercase text-base tracking-widest font-serif mb-3">Education</h2>
+            <h2 className="uppercase text-[23px] tracking-widest font-serif mb-3">Education</h2>
             <div className="flex flex-col gap-2">
               {cv.education.map((e) => (
                 <div key={e.school} className="flex flex-wrap items-baseline justify-between gap-x-4">
@@ -25,7 +25,7 @@ export default function CVPage() {
           </section>
 
           <section>
-            <h2 className="uppercase text-base tracking-widest font-serif mb-3">Awards</h2>
+            <h2 className="uppercase text-[23px] tracking-widest font-serif mb-3">Awards</h2>
             <div className="flex flex-col gap-2">
               {cv.awards.map((a) => (
                 <div key={a.title} className="flex flex-wrap items-baseline justify-between gap-x-4">
@@ -37,7 +37,7 @@ export default function CVPage() {
           </section>
 
           <section>
-            <h2 className="uppercase text-base tracking-widest font-serif mb-3">Exhibitions</h2>
+            <h2 className="uppercase text-[23px] tracking-widest font-serif mb-3">Exhibitions</h2>
             <div className="flex flex-col gap-2">
               {cv.exhibitions.map((ex) => (
                 <div key={ex.title} className="flex flex-wrap items-baseline justify-between gap-x-4">
@@ -51,7 +51,7 @@ export default function CVPage() {
           </section>
 
           <section>
-            <h2 className="uppercase text-base tracking-widest font-serif mb-3">Work Experience</h2>
+            <h2 className="uppercase text-[23px] tracking-widest font-serif mb-3">Work Experience</h2>
             <div className="flex flex-col gap-10">
               {cv.experience.map((job) => (
                 <div key={job.org}>
@@ -71,7 +71,7 @@ export default function CVPage() {
         </div>
 
         <aside className="lg:flex-1 lg:sticky lg:top-24 lg:self-start">
-          <h2 className="uppercase text-base tracking-widest font-serif mb-3">Skills</h2>
+          <h2 className="uppercase text-[23px] tracking-widest font-serif mb-3">Skills</h2>
           <div className="flex flex-col gap-4">
             {cv.skills.map((group) => (
               <div key={group.category}>
