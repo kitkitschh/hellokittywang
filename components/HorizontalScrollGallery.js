@@ -59,6 +59,18 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
   function skipSection() {
     const el = targetRef.current;
     if (!el) return;
+
+    // Jump straight to the next sub-section (this section's next sibling in
+    // the page), rather than just past this carousel's own scroll range —
+    // that way "skip" lands the viewer at the start of the next gallery
+    // instead of on this one's last photo.
+    const next = el.nextElementSibling;
+    if (next) {
+      const targetY = window.scrollY + next.getBoundingClientRect().top;
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+      return;
+    }
+
     const rect = el.getBoundingClientRect();
     const targetY = window.scrollY + rect.bottom - window.innerHeight + 2;
     window.scrollTo({ top: targetY, behavior: "smooth" });
