@@ -6,6 +6,7 @@ export const metadata = { title: "Kitty Wang - Film / Video" };
 export default function FilmVideoPage() {
   return (
     <div>
+      <div className="fixed inset-0 -z-10 gradient-bg" aria-hidden="true" />
       <h1 className="text-2xl uppercase tracking-widest font-serif mb-8">Film / Video</h1>
       <div className="flex flex-col gap-16">
         {filmVideoWorks.map((w) => (
