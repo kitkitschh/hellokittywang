@@ -3,8 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata = { title: "Kitty Wang - Contact" };
 
-// TODO: replace with Kitty's real contact email.
-const CONTACT_EMAIL = "hello@hellokittywang.com";
+const CONTACT_EMAIL = "wang.kitty28@gmail.com";
 
 const socialIcon = (label) => {
   switch (label) {
