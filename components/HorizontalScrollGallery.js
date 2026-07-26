@@ -149,6 +149,8 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
                 <img
                   src={img.src}
                   alt={img.alt}
+                  width={img.width}
+                  height={img.height}
                   loading={i < 3 ? "eager" : "lazy"}
                   decoding="async"
                   className="h-full w-auto object-contain"

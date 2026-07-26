@@ -1,25 +1,11 @@
-import fs from "fs";
-import path from "path";
 import HorizontalScrollGallery from "@/components/HorizontalScrollGallery";
+import { getImagesFromFolder } from "@/lib/images";
 import { eventPhotographyGalleries } from "@/data/content";
 
 export const metadata = { title: "Kitty Wang - Events & Photography" };
 
-function getImages(folder, alt) {
-  const dir = path.join(process.cwd(), "public", "images", folder);
-  try {
-    return fs
-      .readdirSync(dir)
-      .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-      .sort()
-      .map((f) => ({ src: `/images/${folder}/${f}`, alt }));
-  } catch (e) {
-    return [];
-  }
-}
-
 function Gallery({ folder, alt, title, date }) {
-  const images = getImages(folder, alt);
+  const images = getImagesFromFolder(folder, alt);
   if (images.length === 0) {
     return (
       <div>

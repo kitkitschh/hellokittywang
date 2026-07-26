@@ -23,6 +23,8 @@ export default function ImageGridView({ images }) {
           <img
             src={img.src}
             alt={img.alt}
+            width={img.width}
+            height={img.height}
             loading="lazy"
             decoding="async"
             className="block w-full h-auto"

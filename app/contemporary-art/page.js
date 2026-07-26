@@ -1,26 +1,12 @@
-import fs from "fs";
-import path from "path";
 import HorizontalScrollGallery from "@/components/HorizontalScrollGallery";
 import VimeoEmbed from "@/components/VimeoEmbed";
+import { getImagesFromFolder } from "@/lib/images";
 import { exhibitionDocumentation } from "@/data/content";
 
 export const metadata = { title: "Kitty Wang - Exhibitions" };
 
-function getImages(folder, alt) {
-  const dir = path.join(process.cwd(), "public", "images", folder);
-  try {
-    return fs
-      .readdirSync(dir)
-      .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-      .sort()
-      .map((f) => ({ src: `/images/${folder}/${f}`, alt }));
-  } catch (e) {
-    return [];
-  }
-}
-
 function Exhibition({ title, date, venue, imageFolder, vimeoId }) {
-  const images = getImages(imageFolder, title);
+  const images = getImagesFromFolder(imageFolder, title);
   const dateLine = [date, venue].filter(Boolean).join(" — ");
 
   if (images.length === 0) {

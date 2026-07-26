@@ -1,24 +1,10 @@
-import fs from "fs";
-import path from "path";
 import HorizontalScrollGallery from "@/components/HorizontalScrollGallery";
 import StaticPhotoRow from "@/components/StaticPhotoRow";
 import VimeoEmbed from "@/components/VimeoEmbed";
+import { getImagesFromFolder } from "@/lib/images";
 import { marketingCampaigns } from "@/data/content";
 
 export const metadata = { title: "Kitty Wang - Marketing Campaigns" };
-
-function getImages(folder, alt) {
-  const dir = path.join(process.cwd(), "public", "images", folder);
-  try {
-    return fs
-      .readdirSync(dir)
-      .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-      .sort()
-      .map((f) => ({ src: `/images/${folder}/${f}`, alt }));
-  } catch (e) {
-    return [];
-  }
-}
 
 function SubCampaign({ client, clientDate, sub }) {
   const alt = `${client} — ${sub.title}`;
@@ -38,7 +24,7 @@ function SubCampaign({ client, clientDate, sub }) {
     );
   }
 
-  const images = getImages(sub.imageFolder, alt);
+  const images = getImagesFromFolder(sub.imageFolder, alt);
 
   if (images.length === 0) {
     return (

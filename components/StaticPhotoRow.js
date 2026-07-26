@@ -31,7 +31,13 @@ export default function StaticPhotoRow({ images = [], title, date }) {
             className="h-[60vh] flex-shrink-0 bg-ink/5 cursor-zoom-in"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={img.src} alt={img.alt} className="h-full w-auto object-contain" />
+            <img
+              src={img.src}
+              alt={img.alt}
+              width={img.width}
+              height={img.height}
+              className="h-full w-auto object-contain"
+            />
           </button>
         ))}
       </div>
