@@ -18,9 +18,15 @@ export default function MarketingCampaignsPage() {
                 <div key={sub.title}>
                   <h3 className="text-sm uppercase tracking-wide text-ink/70 mb-3">{sub.title}</h3>
                   {sub.videos ? (
-                    <div className="flex flex-col gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                       {sub.videos.map((v) => (
-                        <VimeoEmbed key={v.id} id={v.id} hash={v.hash} title={`${c.client} — ${sub.title}`} />
+                        <VimeoEmbed
+                          key={v.id}
+                          id={v.id}
+                          hash={v.hash}
+                          title={`${c.client} — ${sub.title}`}
+                          aspect={sub.videoAspect}
+                        />
                       ))}
                     </div>
                   ) : (

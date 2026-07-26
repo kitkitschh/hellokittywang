@@ -98,6 +98,7 @@ export const marketingCampaigns = [
       { title: "Assets", imageFolder: "marketing-campaigns/easyherb/assets" },
       {
         title: "Instagram Reels",
+        videoAspect: "portrait",
         videos: [
           { id: "1212968344", hash: "d357a0f3ee" },
           { id: "1212968345", hash: "3b82019bf3" },
@@ -127,6 +128,7 @@ export const marketingCampaigns = [
       },
       {
         title: "Instagram Reels",
+        videoAspect: "portrait",
         videos: [
           { id: "1212968454", hash: "d667ecc380" },
           { id: "1212968457" },
