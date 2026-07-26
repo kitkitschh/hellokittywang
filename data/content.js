@@ -158,7 +158,7 @@ export const exhibitionDocumentation = [
   },
   {
     title: "Reflections of Home",
-    date: "",
+    date: "December 2026",
     venue: "Living Space Group Show",
     imageFolder: "contemporary-art/exhibitions/reflections-of-home",
   },
