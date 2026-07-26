@@ -16,13 +16,13 @@ body {
   margin-top: 1rem;
 }
 
-.events-gradient-bg {
+.gradient-bg {
   background: linear-gradient(-45deg, #b8ccab, #e0c3e0, #abcccb, #dfbff2, #b8ccab);
   background-size: 400% 400%;
-  animation: eventsGradientShift 24s ease infinite;
+  animation: gradientShift 24s ease infinite;
 }
 
-@keyframes eventsGradientShift {
+@keyframes gradientShift {
   0% {
     background-position: 0% 50%;
   }
