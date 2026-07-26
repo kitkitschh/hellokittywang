@@ -6,7 +6,7 @@ import { nav } from "@/data/content";
 
 export default function Nav() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/about";
 
   const base = isHome ? "text-white" : "text-ink";
   const dim = isHome ? "text-white/70" : "text-ink/70";

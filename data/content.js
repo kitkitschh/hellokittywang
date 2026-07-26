@@ -20,8 +20,6 @@ Wang is an alumna of the High School of Art and Design and The Cooper Union, whe
 
 Through vibrant, satirical, and often uncanny juxtapositions, Kitty Wang invites viewers into spaces that are as disarming as they are familiar—spaces that ask us to reconsider what we see, what we believe, and why.`;
 
-export const bioPhotoCredit = "Photo: Clyde Nichols";
-
 export const cv = {
   location: "Based in Brooklyn, NY",
   education: [{ school: "BFA at The Cooper Union", year: "2024", place: "New York, NY" }],
