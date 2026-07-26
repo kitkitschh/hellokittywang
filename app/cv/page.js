@@ -70,7 +70,7 @@ export default function CVPage() {
           </section>
         </div>
 
-        <aside className="lg:flex-1 lg:sticky lg:top-24 lg:self-start">
+        <aside className="lg:flex-1">
           <h2 className="uppercase text-[23px] tracking-widest font-serif mb-3">Skills</h2>
           <div className="flex flex-col gap-4">
             {cv.skills.map((group) => (
