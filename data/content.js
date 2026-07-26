@@ -87,8 +87,36 @@ export const filmVideoWorks = [
 ];
 
 export const marketingCampaigns = [
-  { client: "EasyHerb", date: "2024-2025", imageFolder: "marketing-campaigns/easyherb" },
-  { client: "GLO Studio", date: "2024", imageFolder: "marketing-campaigns/glo-studio" },
+  {
+    client: "EasyHerb",
+    date: "2024-2025",
+    subCampaigns: [
+      { title: "What is EasyHerb?", imageFolder: "marketing-campaigns/easyherb/what-is-easyherb" },
+      { title: "Let's Get Connected", imageFolder: "marketing-campaigns/easyherb/lets-get-connected" },
+      { title: "Meme Format", imageFolder: "marketing-campaigns/easyherb/meme-format" },
+      { title: "Two Robbers", imageFolder: "marketing-campaigns/easyherb/two-robbers" },
+      { title: "Assets", imageFolder: "marketing-campaigns/easyherb/assets" },
+    ],
+  },
+  {
+    client: "GLO Studio",
+    date: "2024",
+    subCampaigns: [
+      { title: "Uniqlo x GLO Studio Neons", imageFolder: "marketing-campaigns/glo-studio/uniqlo-x-glo-studio-neons" },
+      {
+        title: "Dark Matter Coffee x GLO Studio Install",
+        imageFolder: "marketing-campaigns/glo-studio/dark-matter-coffee-x-glo-studio-install",
+      },
+      {
+        title: "Cooper Union Tuition Free Announcement",
+        imageFolder: "marketing-campaigns/glo-studio/cooper-union-tuition-free-announcement",
+      },
+      {
+        title: "GLO Studio Sample Sale Announcement",
+        imageFolder: "marketing-campaigns/glo-studio/glo-studio-sample-sale-announcement",
+      },
+    ],
+  },
 ];
 
 // Event photography — client/social event coverage, separate from her own

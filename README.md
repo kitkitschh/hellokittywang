@@ -35,7 +35,11 @@ exhibitions kept separate under Contemporary Art:
   - `contemporary-art/exhibitions/superstar-superstar-death`,
     `contemporary-art/exhibitions/when-will-you-play`,
     `contemporary-art/exhibitions/reflections-of-home` — exhibition documentation
-  - `marketing-campaigns/easyherb`, `marketing-campaigns/glo-studio`
+  - `marketing-campaigns/easyherb/<sub-campaign>` (what-is-easyherb, lets-get-connected,
+    meme-format, two-robbers, assets), `marketing-campaigns/glo-studio/<sub-campaign>`
+    (uniqlo-x-glo-studio-neons, dark-matter-coffee-x-glo-studio-install,
+    cooper-union-tuition-free-announcement, glo-studio-sample-sale-announcement)
+  - `about/kitty-wang-portrait.jpg` — her About page photo
 
   See `../media/` (one level up, outside this git repo) for the staging folder — drop
   raw originals there and Claude will resize/compress a web copy into the matching
@@ -47,6 +51,10 @@ exhibitions kept separate under Contemporary Art:
 
 - `app/contact/page.js` has a placeholder email (`hello@hellokittywang.com`) — swap in
   your real contact address.
+- The "Instagram Reels" sub-folders for EasyHerb and GLO Studio are video files (.mp4),
+  which the site can't embed directly — upload those to Vimeo and add them to
+  `filmVideoWorks` (or a new marketing-reels list) in `data/content.js` if you want them
+  playable on the site.
 
 ## Push to GitHub
 
