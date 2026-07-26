@@ -1,7 +1,7 @@
 export const nav = [
   { href: "/film-video", label: "Film / Video" },
   { href: "/marketing-campaigns", label: "Marketing Campaigns" },
-  { href: "/events", label: "Events & Documentation" },
+  { href: "/events", label: "Events & Photography" },
   { href: "/contemporary-art", label: "Contemporary Art" },
 ];
 
