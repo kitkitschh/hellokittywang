@@ -15,7 +15,7 @@ export const bio = `Kitty Wang is a Chinese-American interdisciplinary artist ba
 
 Born and raised in Queens, NY, Wang is deeply influenced by the layered realities of American and Chinese cultural narratives. Her work navigates the shifting stereotypes of women in both contexts, reflecting on how media evolution shapes—and is shaped by—societal norms. Nature often threads through these explorations, serving as both a metaphor and counterpoint to the artificial landscapes of femininity.
 
-Wang is an alumna of the High School of Art and Design and The Cooper Union, where she was awarded the Robert Breer Film Award. Her solo exhibitions at Cooper Union, When Will You Play? and Superstar Superstar death, examined performance, persona, and the blurred boundaries between spectacle and self.
+Wang is an alumna of the High School of Art and Design and The Cooper Union, where she was awarded the Robert Breer Film Award. Her solo exhibitions at Cooper Union, When Will You Play? and SUPERSTAR SUPERSTAR death., examined performance, persona, and the blurred boundaries between spectacle and self.
 
 Through vibrant, satirical, and often uncanny juxtapositions, Kitty Wang invites viewers into spaces that are as disarming as they are familiar—spaces that ask us to reconsider what we see, what we believe, and why.`;
 

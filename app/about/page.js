@@ -9,10 +9,10 @@ export default function AboutPage() {
       <div className="absolute inset-0 -z-10 bg-black">
         <Image
           src="/images/about/kitty-wang-portrait.jpg"
-          alt="Kitty Wang"
+          alt="Kitty Wang holding a vintage film camera up to her eye"
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[70%_30%]"
           priority
         />
         <div className="absolute inset-0 bg-black/55" />
