@@ -131,7 +131,7 @@ export const marketingCampaigns = [
         videoAspect: "portrait",
         videos: [
           { id: "1212968454", hash: "d667ecc380" },
-          { id: "1212968457" },
+          { id: "1212968457", hash: "c3582a7e0d" },
           { id: "1212968455", hash: "6b6322f292" },
         ],
       },
