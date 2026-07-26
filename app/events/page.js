@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import HorizontalScrollGallery from "@/components/HorizontalScrollGallery";
-import { eventPhotographyGalleries, eventPhotographyFolder } from "@/data/content";
+import { eventPhotographyGalleries } from "@/data/content";
 
 export const metadata = { title: "Kitty Wang - Events & Photography" };
 
@@ -48,12 +48,6 @@ export default function EventsPage() {
         {eventPhotographyGalleries.map((g) => (
           <Gallery key={g.title} folder={g.imageFolder} alt={g.title} title={g.title} date={g.date} />
         ))}
-
-        <Gallery
-          folder={eventPhotographyFolder}
-          alt="Event photography"
-          title="More Event Photography"
-        />
       </div>
     </div>
   );
