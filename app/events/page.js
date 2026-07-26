@@ -37,6 +37,7 @@ function Gallery({ folder, alt, title, date }) {
 export default function EventsPage() {
   return (
     <div>
+      <div className="fixed inset-0 -z-10 events-gradient-bg" aria-hidden="true" />
       <h1 className="text-2xl uppercase tracking-widest font-serif mb-2">Events & Photography</h1>
       <p className="text-ink/60 mb-12 max-w-xl">
         Event photography — client and social event coverage. (Documentation from her
