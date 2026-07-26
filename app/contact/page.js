@@ -71,7 +71,7 @@ export default function ContactPage() {
         </div>
 
         <div className="bg-ink/5 rounded-lg p-6 sm:p-8">
-          <ContactForm contactEmail={CONTACT_EMAIL} />
+          <ContactForm />
         </div>
       </div>
     </div>

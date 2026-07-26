@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqrlkaa";
+
 const initialState = {
   firstName: "",
   lastName: "",
@@ -26,10 +28,10 @@ function Field({ label, required, error, children }) {
   );
 }
 
-export default function ContactForm({ contactEmail }) {
+export default function ContactForm() {
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState("idle"); // idle | sending | sent
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const update = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
@@ -43,7 +45,7 @@ export default function ContactForm({ contactEmail }) {
     return next;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const nextErrors = validate();
     setErrors(nextErrors);
@@ -51,22 +53,34 @@ export default function ContactForm({ contactEmail }) {
 
     setStatus("sending");
 
-    const subject = values.subject.trim() || `Message from ${values.firstName} ${values.lastName}`;
-    const body = `${values.message}\n\n— ${values.firstName} ${values.lastName} (${values.email})`;
-    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          subject: values.subject || `Message from ${values.firstName} ${values.lastName}`,
+          message: values.message,
+        }),
+      });
 
-    window.location.href = mailto;
-
-    setTimeout(() => {
-      setStatus("sent");
-      setValues(initialState);
-    }, 500);
+      if (res.ok) {
+        setStatus("sent");
+        setValues(initialState);
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
   }
 
   if (status === "sent") {
     return (
       <div className="py-8 text-center">
-        <p className="text-lg">Your email app should be open with the message ready to send.</p>
+        <p className="text-lg">Thanks — your message is on its way.</p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
@@ -109,9 +123,11 @@ export default function ContactForm({ contactEmail }) {
         {status === "sending" ? "Sending…" : "Send"}
       </button>
 
-      <p className="text-sm text-ink/50">
-        This opens your email app with the message pre-filled — the site doesn't send it directly.
-      </p>
+      {status === "error" && (
+        <p className="text-sm text-red-700/80">
+          Something went wrong sending your message. Please try again in a moment.
+        </p>
+      )}
     </form>
   );
 }
