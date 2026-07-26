@@ -121,7 +121,11 @@ export const marketingCampaigns = [
       },
       {
         title: "Instagram Reels",
-        videos: [{ id: "1212968454", hash: "d667ecc380" }],
+        videos: [
+          { id: "1212968454", hash: "d667ecc380" },
+          { id: "1212968457" },
+          { id: "1212968455", hash: "6b6322f292" },
+        ],
       },
     ],
   },
