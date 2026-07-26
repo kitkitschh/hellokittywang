@@ -31,12 +31,15 @@ export const cv = {
   experience: [
     {
       org: "Noreen Seabrook Marketing, Inc.",
-      role: "Administrative and Design Assistant",
+      role: "Account Manager, Lead Designer & Administrative Assistant",
       date: "Jan 2025 (currently employed)",
       bullets: [
-        "Coordinated production with 3 Nepalese mills, managing shipping logistics for 10-50 orders/month with an ~85% on-time delivery rate.",
-        "Designed custom rug mockups and visual assets for 15+ client presentations using Adobe Illustrator and Photoshop.",
-        "Managed invoicing via QuickBooks and monthly revenue reporting averaging $100,000/month over the past four months in Excel.",
+        "Manage the full client lifecycle as account manager — intake new clients, collect and file W9s, write order confirmations for all orders, and keep clients informed on rug production and shipment status.",
+        "Coordinate with brokers in Nepal and the US on international shipping and customs, and manage relationships with two trucking partners (local NY and nationwide US deliveries), preparing distribution lists for each shipment.",
+        "Design custom rug mockups and visual assets for 15+ client presentations using Adobe Illustrator and Photoshop as lead designer.",
+        "Coordinate production with 3 Nepalese mills, managing logistics for 10-50 orders/month with an ~85% on-time delivery rate.",
+        "Track company bills to vendors and manage invoicing via QuickBooks, with monthly revenue reporting averaging $100,000/month in Excel.",
+        "Founded a partnership between the company and The Cooper Union's internship program, as an alumna, to give current textile arts students hands-on industry experience, launching Summer 2026.",
       ],
     },
     {
