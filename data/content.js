@@ -40,6 +40,16 @@ export const cv = {
       ],
     },
     {
+      org: "EasyHerb",
+      role: "Marketing & Social Media Coordinator",
+      date: "May 2024 - Feb 2025",
+      bullets: [
+        'Led social media marketing and content strategy for EasyHerb, developing 20+ campaign concepts spanning brand explainers, memes, and community-building content ("What is EasyHerb?," "Let\'s Get Connected," "Meme Format," "Two Robbers").',
+        "Produced 15+ Instagram Reels, reaching 250+ views and contributing to 150% follower growth.",
+        "Designed marketing assets (graphics, copy, campaign visuals) across 20+ campaigns, maintaining brand consistency across social platforms.",
+      ],
+    },
+    {
       org: "Glo Studio Inc",
       role: "Sales Marketing Assistant",
       date: "May 2024 - Jan 2025",
