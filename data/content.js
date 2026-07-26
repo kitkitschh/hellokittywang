@@ -11,7 +11,7 @@ export const socials = [
   { href: "https://vimeo.com/user220394171", label: "Vimeo" },
 ];
 
-export const bio = `Kitty Wang is a Chinese-American interdisciplinary artist based in Brooklyn, NY, working across video, drawing, sculpture, and installation. Her practice explores the intersections of kitsch, femininity, and cultural perception—mining the aesthetics of mass media and domestic iconography to question how womanhood is constructed, consumed, and transformed across time.
+export const bio = `Kitty Wang is a Chinese-American interdisciplinary artist based in Queens, NY, working across video, drawing, sculpture, and installation. Her practice explores the intersections of kitsch, femininity, and cultural perception—mining the aesthetics of mass media and domestic iconography to question how womanhood is constructed, consumed, and transformed across time.
 
 Born and raised in Queens, NY, Wang is deeply influenced by the layered realities of American and Chinese cultural narratives. Her work navigates the shifting stereotypes of women in both contexts, reflecting on how media evolution shapes—and is shaped by—societal norms. Nature often threads through these explorations, serving as both a metaphor and counterpoint to the artificial landscapes of femininity.
 
@@ -20,7 +20,7 @@ Wang is an alumna of the High School of Art and Design and The Cooper Union, whe
 Through vibrant, satirical, and often uncanny juxtapositions, Kitty Wang invites viewers into spaces that are as disarming as they are familiar—spaces that ask us to reconsider what we see, what we believe, and why.`;
 
 export const cv = {
-  location: "Based in Brooklyn, NY",
+  location: "Based in Queens, NY",
   education: [{ school: "BFA at The Cooper Union", year: "2024", place: "New York, NY" }],
   awards: [{ title: "Robert Breer Film Award", year: "2024" }],
   exhibitions: [
