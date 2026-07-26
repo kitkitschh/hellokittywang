@@ -75,12 +75,12 @@ export default function CVPage() {
           <div className="flex flex-col gap-4">
             {cv.skills.map((group) => (
               <div key={group.category}>
-                <p className="text-sm uppercase tracking-wide text-ink/60 mb-2">{group.category}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-xs uppercase tracking-wide text-ink/60 mb-2">{group.category}</p>
+                <div className="flex flex-wrap gap-1.5">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-ink/20 px-3 py-1 text-sm"
+                      className="rounded-full border border-ink/20 px-2 py-0.5 text-xs"
                     >
                       {item}
                     </span>
