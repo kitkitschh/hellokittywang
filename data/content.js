@@ -86,7 +86,7 @@ export const filmVideoWorks = [
 export const marketingCampaigns = [
   {
     client: "EasyHerb",
-    date: "2024-2025",
+    date: "2024",
     subCampaigns: [
       { title: "What is EasyHerb?", imageFolder: "marketing-campaigns/easyherb/what-is-easyherb" },
       { title: "Let's Get Connected", imageFolder: "marketing-campaigns/easyherb/lets-get-connected" },
