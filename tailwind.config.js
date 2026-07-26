@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["'Georgia'", "'Times New Roman'", "serif"],
+        sans: ["var(--font-vt323)", "monospace"],
+        serif: ["var(--font-vt323)", "monospace"],
       },
       colors: {
         paper: "#f7f5f1",
