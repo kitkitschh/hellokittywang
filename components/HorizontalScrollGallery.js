@@ -76,9 +76,33 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
     window.scrollTo({ top: targetY, behavior: "smooth" });
   }
 
+  function previousSection() {
+    const el = targetRef.current;
+    if (!el) return;
+
+    // Jump straight to the start of the previous sub-section, same idea as
+    // skip but backwards — otherwise going "back up" means scrolling through
+    // this whole carousel in reverse.
+    const prev = el.previousElementSibling;
+    if (prev) {
+      const targetY = window.scrollY + prev.getBoundingClientRect().top;
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <section ref={targetRef} className="relative" style={{ height: `${scrollVh}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center px-6">
+        <button
+          type="button"
+          onClick={previousSection}
+          className="absolute bottom-6 left-6 z-10 rounded-full border border-ink/30 bg-paper/70 backdrop-blur-sm px-4 py-1.5 text-sm uppercase tracking-wide hover:bg-paper/90"
+        >
+          ↑ Previous section
+        </button>
         <button
           type="button"
           onClick={skipSection}
