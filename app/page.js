@@ -1,6 +1,6 @@
 import VideoHero from "@/components/VideoHero";
 
-export default function WorkPage() {
+export default function HomePage() {
   return (
     <div className="relative min-h-[85vh] flex flex-col items-center justify-center text-center">
       <VideoHero />
