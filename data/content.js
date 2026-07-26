@@ -81,6 +81,8 @@ export const cv = {
       role: "Digital Contents Intern",
       date: "Sep 2022 - Dec 2022",
       bullets: [
+        "Aided the Digital Content department across video, web, and social — pitching, planning, and producing short-form videos for social media, and participating in department planning for upcoming exhibitions.",
+        "Conducted archival and historical research for documentary-style video projects, and assisted with livestreaming, interview transcription, and digital asset management.",
         "Built the internal database for the Jaune Quick-to-See Smith exhibition, cataloging 70+ objects/records.",
         'Produced and edited "Ask a Curator: In the Balance: Between Painting and Sculpture, 1965–1985" (1.7K views) and "Edward Hopper\'s New York" (10K views).',
         "Audited the Whitney website, identifying 5 usability issues later addressed by the team.",
