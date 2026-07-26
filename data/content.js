@@ -50,6 +50,7 @@ export const cv = {
         'Led social media marketing and content strategy for EasyHerb, developing 20+ campaign concepts spanning brand explainers, memes, and community-building content ("What is EasyHerb?," "Let\'s Get Connected," "Meme Format," "Two Robbers").',
         "Produced 15+ Instagram Reels, reaching 250+ views and contributing to 150% follower growth.",
         "Designed marketing assets (graphics, copy, campaign visuals) across 20+ campaigns, maintaining brand consistency across social platforms.",
+        "Navigated Instagram's content and advertising policies alongside local and nationwide cannabis regulations, ensuring all campaigns and Reels for the cannabis delivery brand stayed compliant while still driving engagement.",
       ],
     },
     {
