@@ -1,4 +1,5 @@
 import ImageGrid from "@/components/ImageGrid";
+import VimeoEmbed from "@/components/VimeoEmbed";
 import { marketingCampaigns } from "@/data/content";
 
 export const metadata = { title: "Kitty Wang - Marketing Campaigns" };
@@ -16,7 +17,15 @@ export default function MarketingCampaignsPage() {
               {c.subCampaigns.map((sub) => (
                 <div key={sub.title}>
                   <h3 className="text-sm uppercase tracking-wide text-ink/70 mb-3">{sub.title}</h3>
-                  <ImageGrid folder={sub.imageFolder} alt={`${c.client} — ${sub.title}`} />
+                  {sub.videos ? (
+                    <div className="flex flex-col gap-6">
+                      {sub.videos.map((v) => (
+                        <VimeoEmbed key={v.id} id={v.id} hash={v.hash} title={`${c.client} — ${sub.title}`} />
+                      ))}
+                    </div>
+                  ) : (
+                    <ImageGrid folder={sub.imageFolder} alt={`${c.client} — ${sub.title}`} />
+                  )}
                 </div>
               ))}
             </div>

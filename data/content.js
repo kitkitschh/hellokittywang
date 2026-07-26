@@ -96,6 +96,10 @@ export const marketingCampaigns = [
       { title: "Meme Format", imageFolder: "marketing-campaigns/easyherb/meme-format" },
       { title: "Two Robbers", imageFolder: "marketing-campaigns/easyherb/two-robbers" },
       { title: "Assets", imageFolder: "marketing-campaigns/easyherb/assets" },
+      {
+        title: "Instagram Reels",
+        videos: [{ id: "1212968344", hash: "d357a0f3ee" }],
+      },
     ],
   },
   {
