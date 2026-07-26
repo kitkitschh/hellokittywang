@@ -157,15 +157,15 @@ export const exhibitionDocumentation = [
     imageFolder: "contemporary-art/exhibitions/superstar-superstar-death",
   },
   {
-    title: "When Will You Play?",
-    date: "November 2022",
-    venue: "Cooper Union 41 Cooper Square Gallery",
-    imageFolder: "contemporary-art/exhibitions/when-will-you-play",
-  },
-  {
     title: "Reflections of Home",
     date: "",
     venue: "Living Space Group Show",
     imageFolder: "contemporary-art/exhibitions/reflections-of-home",
+  },
+  {
+    title: "When Will You Play?",
+    date: "November 2022",
+    venue: "Cooper Union 41 Cooper Square Gallery",
+    imageFolder: "contemporary-art/exhibitions/when-will-you-play",
   },
 ];
