@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import confetti from "canvas-confetti";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqrlkaa";
 
@@ -76,6 +77,17 @@ export default function ContactForm() {
       setStatus("error");
     }
   }
+
+  useEffect(() => {
+    if (status !== "sent") return;
+    confetti({
+      particleCount: 90,
+      spread: 75,
+      startVelocity: 35,
+      origin: { y: 0.6 },
+      colors: ["#141414", "#f7f5f1", "#c9a24b"],
+    });
+  }, [status]);
 
   if (status === "sent") {
     return (
