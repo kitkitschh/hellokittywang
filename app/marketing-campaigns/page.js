@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import HorizontalScrollGallery from "@/components/HorizontalScrollGallery";
+import StaticPhotoRow from "@/components/StaticPhotoRow";
 import VimeoEmbed from "@/components/VimeoEmbed";
 import { marketingCampaigns } from "@/data/content";
 
@@ -48,6 +49,12 @@ function SubCampaign({ client, sub }) {
         </div>
       </div>
     );
+  }
+
+  // Too few photos for the scroll-pin carousel to make sense — show them in
+  // the same title/date + full-height-photo styling, just not pinned/scrolled.
+  if (images.length <= 2) {
+    return <StaticPhotoRow images={images} title={sub.title} date={client} />;
   }
 
   return <HorizontalScrollGallery images={images} title={sub.title} date={client} />;
