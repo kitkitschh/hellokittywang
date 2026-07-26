@@ -15,3 +15,53 @@ body {
 .prose-body p + p {
   margin-top: 1rem;
 }
+
+/* Fan-of-cards layout used by SocialCards.js. Heights match the breakpoints
+   the component's getHeightMultiplier()/getResponsiveMultiplier() expect. */
+.fan-layout {
+  position: relative;
+  height: 22rem;
+}
+@media (min-width: 480px) {
+  .fan-layout {
+    height: 26rem;
+  }
+}
+@media (min-width: 640px) {
+  .fan-layout {
+    height: 28rem;
+  }
+}
+@media (min-width: 768px) {
+  .fan-layout {
+    height: 34rem;
+  }
+}
+@media (min-width: 1024px) {
+  .fan-layout {
+    height: 38rem;
+  }
+}
+
+.fan-card {
+  position: absolute;
+  width: 11rem;
+  height: 14rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transform-origin: bottom center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+}
+@media (min-width: 640px) {
+  .fan-card {
+    width: 13rem;
+    height: 16.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .fan-card {
+    width: 15rem;
+    height: 19rem;
+  }
+}
