@@ -56,9 +56,24 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
 
   const scrollVh = Math.min(900, Math.max(350, images.length * 58));
 
+  function skipSection() {
+    const el = targetRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const targetY = window.scrollY + rect.bottom - window.innerHeight + 2;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  }
+
   return (
     <section ref={targetRef} className="relative" style={{ height: `${scrollVh}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center px-6">
+        <button
+          type="button"
+          onClick={skipSection}
+          className="absolute bottom-6 right-6 z-10 rounded-full border border-ink/30 bg-paper/70 backdrop-blur-sm px-4 py-1.5 text-sm uppercase tracking-wide hover:bg-paper/90"
+        >
+          Skip section ↓
+        </button>
         {(title || date) && (
           <div className="mb-8">
             {title && (
