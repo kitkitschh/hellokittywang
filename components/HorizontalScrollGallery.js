@@ -10,7 +10,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 // The horizontal distance is measured from the row's actual rendered width
 // (not a flat percentage) so every photo scrolls fully into view no matter
 // how many there are or how wide the row ends up being — a fixed percentage
-// like "-95%" only reveals everything for one specific row length.
+// like "-95%" only reveals everything for one specific row length. A
+// ResizeObserver keeps that measurement correct as each photo finishes
+// loading and the row's real width changes, plus a small buffer so the very
+// last photo is guaranteed to clear the edge of the screen.
 export default function HorizontalScrollGallery({ images = [] }) {
   const targetRef = useRef(null);
   const rowRef = useRef(null);
@@ -20,24 +23,26 @@ export default function HorizontalScrollGallery({ images = [] }) {
   const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
 
   useEffect(() => {
+    const row = rowRef.current;
+    if (!row) return;
+
+    const BUFFER = 48;
+
     function measure() {
-      if (!rowRef.current) return;
-      const rowWidth = rowRef.current.scrollWidth;
+      const rowWidth = row.scrollWidth;
       const viewportWidth = window.innerWidth;
-      setDistance(Math.max(0, rowWidth - viewportWidth));
+      setDistance(Math.max(0, rowWidth - viewportWidth + BUFFER));
     }
 
     measure();
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(row);
     window.addEventListener("resize", measure);
 
-    const imgs = rowRef.current ? Array.from(rowRef.current.querySelectorAll("img")) : [];
-    imgs.forEach((img) => {
-      if (!img.complete) img.addEventListener("load", measure);
-    });
-
     return () => {
+      ro.disconnect();
       window.removeEventListener("resize", measure);
-      imgs.forEach((img) => img.removeEventListener("load", measure));
     };
   }, [images.length]);
 
@@ -55,6 +60,7 @@ export default function HorizontalScrollGallery({ images = [] }) {
               <img src={img.src} alt={img.alt} className="h-full w-auto object-contain" />
             </div>
           ))}
+          <div className="flex-shrink-0 w-6" aria-hidden="true" />
         </motion.div>
       </div>
     </section>
