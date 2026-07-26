@@ -18,16 +18,20 @@ function getImages(folder, alt) {
   }
 }
 
-function Gallery({ folder, alt }) {
+function Gallery({ folder, alt, title, date }) {
   const images = getImages(folder, alt);
   if (images.length === 0) {
     return (
-      <div className="border border-dashed border-ink/20 rounded p-8 text-sm text-ink/50">
-        Drop images into <code className="px-1">/public/images/{folder}</code> to display them here.
+      <div>
+        <h2 className="text-2xl sm:text-3xl uppercase tracking-widest font-serif mb-2">{title}</h2>
+        {date && <p className="text-sm text-ink/60 mb-4">{date}</p>}
+        <div className="border border-dashed border-ink/20 rounded p-8 text-sm text-ink/50">
+          Drop images into <code className="px-1">/public/images/{folder}</code> to display them here.
+        </div>
       </div>
     );
   }
-  return <HorizontalScrollGallery images={images} />;
+  return <HorizontalScrollGallery images={images} title={title} date={date} />;
 }
 
 export default function EventsPage() {
@@ -39,19 +43,16 @@ export default function EventsPage() {
         own gallery shows lives under Contemporary Art › Exhibitions.)
       </p>
 
-      <div className="flex flex-col gap-24">
+      <div className="flex flex-col">
         {eventPhotographyGalleries.map((g) => (
-          <div key={g.title}>
-            <h2 className="text-lg font-medium">{g.title}</h2>
-            {g.date && <p className="text-sm text-ink/60 mb-4">{g.date}</p>}
-            <Gallery folder={g.imageFolder} alt={g.title} />
-          </div>
+          <Gallery key={g.title} folder={g.imageFolder} alt={g.title} title={g.title} date={g.date} />
         ))}
 
-        <div>
-          <h2 className="text-lg font-medium">More Event Photography</h2>
-          <Gallery folder={eventPhotographyFolder} alt="Event photography" />
-        </div>
+        <Gallery
+          folder={eventPhotographyFolder}
+          alt="Event photography"
+          title="More Event Photography"
+        />
       </div>
     </div>
   );

@@ -5,7 +5,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Pins the section while the page scrolls through it, translating a row of
 // photos horizontally. Each photo keeps its own natural aspect ratio (fixed
-// height, auto width) rather than being cropped into a fixed box.
+// height, auto width) rather than being cropped into a fixed box. The
+// title/date stay in the pinned area (not above it in normal page flow) so
+// they remain visible for the whole time this gallery is scrolling by.
 //
 // The horizontal distance is measured from the row's actual rendered width
 // versus the actual visible container's width (NOT window.innerWidth — the
@@ -15,7 +17,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 // keeps both measurements correct as photos finish loading and the row's
 // real width settles, plus a small buffer + trailing spacer so the last
 // photo always fully clears the edge.
-export default function HorizontalScrollGallery({ images = [] }) {
+export default function HorizontalScrollGallery({ images = [], title, date }) {
   const targetRef = useRef(null);
   const containerRef = useRef(null);
   const rowRef = useRef(null);
@@ -56,16 +58,26 @@ export default function HorizontalScrollGallery({ images = [] }) {
 
   return (
     <section ref={targetRef} className="relative" style={{ height: `${scrollVh}vh` }}>
-      <div ref={containerRef} className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div ref={rowRef} style={{ x }} className="flex items-center gap-4 px-6">
-          {images.map((img) => (
-            <div key={img.src} className="h-[65vh] flex-shrink-0 bg-ink/5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img.src} alt={img.alt} className="h-full w-auto object-contain" />
-            </div>
-          ))}
-          <div className="flex-shrink-0 w-6" aria-hidden="true" />
-        </motion.div>
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center px-6">
+        {(title || date) && (
+          <div className="mb-8">
+            {title && (
+              <h2 className="text-2xl sm:text-3xl uppercase tracking-widest font-serif">{title}</h2>
+            )}
+            {date && <p className="text-sm text-ink/60 mt-1">{date}</p>}
+          </div>
+        )}
+        <div ref={containerRef} className="overflow-hidden">
+          <motion.div ref={rowRef} style={{ x }} className="flex items-center gap-4">
+            {images.map((img) => (
+              <div key={img.src} className="h-[60vh] flex-shrink-0 bg-ink/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img.src} alt={img.alt} className="h-full w-auto object-contain" />
+              </div>
+            ))}
+            <div className="flex-shrink-0 w-6" aria-hidden="true" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
