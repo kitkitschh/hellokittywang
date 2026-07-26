@@ -34,6 +34,7 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
     if (!row || !container) return;
 
     const BUFFER = 48;
+    let frame = null;
 
     function measure() {
       const rowWidth = row.scrollWidth;
@@ -41,16 +42,31 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
       setDistance(Math.max(0, rowWidth - containerWidth + BUFFER));
     }
 
+    // Photos loading in one-by-one (rather than from cache) each nudge the
+    // row's width, and each nudge was triggering its own recalculation —
+    // a burst of re-renders while a gallery's images were still trickling in,
+    // which is what made scrolling feel laggy on a fresh (uncached) load.
+    // Collapsing same-frame ResizeObserver callbacks into one measurement
+    // keeps that down to a single recalculation per visual update.
+    function scheduleMeasure() {
+      if (frame !== null) return;
+      frame = requestAnimationFrame(() => {
+        frame = null;
+        measure();
+      });
+    }
+
     measure();
 
-    const ro = new ResizeObserver(measure);
+    const ro = new ResizeObserver(scheduleMeasure);
     ro.observe(row);
     ro.observe(container);
-    window.addEventListener("resize", measure);
+    window.addEventListener("resize", scheduleMeasure);
 
     return () => {
+      if (frame !== null) cancelAnimationFrame(frame);
       ro.disconnect();
-      window.removeEventListener("resize", measure);
+      window.removeEventListener("resize", scheduleMeasure);
     };
   }, [images.length]);
 
@@ -130,7 +146,13 @@ export default function HorizontalScrollGallery({ images = [], title, date }) {
                 className="h-[60vh] flex-shrink-0 bg-ink/5 cursor-zoom-in"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img.src} alt={img.alt} className="h-full w-auto object-contain" />
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading={i < 3 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="h-full w-auto object-contain"
+                />
               </button>
             ))}
             <div className="flex-shrink-0 w-6" aria-hidden="true" />

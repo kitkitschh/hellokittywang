@@ -20,7 +20,13 @@ export default function ImageGridView({ images }) {
           className="mb-4 block w-full break-inside-avoid bg-ink/5 cursor-zoom-in"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={img.src} alt={img.alt} loading="lazy" className="block w-full h-auto" />
+          <img
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            decoding="async"
+            className="block w-full h-auto"
+          />
         </button>
       ))}
 
