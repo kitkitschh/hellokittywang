@@ -24,6 +24,7 @@ export const cv = {
   education: [{ school: "BFA at The Cooper Union", year: "2024", place: "New York, NY" }],
   awards: [{ title: "Robert Breer Film Award", year: "2024" }],
   exhibitions: [
+    { title: "Reflections of Home", date: "December 2026", venue: "Living Space Group Show" },
     { title: "Bronze Show", date: "December 2024", venue: "41 Cooper Gallery (Group Show)" },
     { title: "Superstar Superstar death.", date: "May 2024", venue: "Great Hall Gallery (Solo Show)" },
     { title: "When Will You Play?", date: "November 2023", venue: "41 Cooper Gallery (Solo Show)" },
