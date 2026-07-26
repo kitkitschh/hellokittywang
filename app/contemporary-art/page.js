@@ -56,11 +56,7 @@ export default function ContemporaryArtPage() {
   return (
     <div>
       <div className="fixed inset-0 -z-10 gradient-bg" aria-hidden="true" />
-      <h1 className="text-2xl uppercase tracking-widest font-serif mb-2">Contemporary Art</h1>
-      <p className="text-ink/60 mb-12 max-w-xl">
-        Documentation from her own exhibitions — kept separate from the video/marketing/
-        event work.
-      </p>
+      <h1 className="text-2xl uppercase tracking-widest font-serif mb-12">Contemporary Art</h1>
 
       <div className="flex flex-col">
         {exhibitionDocumentation.map((e) => (
