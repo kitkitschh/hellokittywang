@@ -67,8 +67,11 @@ export const cv = {
       role: "Club Receptionist",
       date: "June 2023 - Feb 2024",
       bullets: [
-        "Handled 30+ phone calls and emails daily from members.",
-        "Coordinated event and party reservations for groups of up to 150 guests, supporting 20+ events total.",
+        "Greeted and served up to 150+ members and guests daily, delivering warm, personalized welcomes and consistent service standards across the club and F&B operations.",
+        "Handled 30+ high-volume calls and emails daily, creating reservations and confidently fielding inquiries on menus, hours, amenities, and events.",
+        "Coordinated event and party reservations for groups of up to 150 guests, supporting 20+ events total, and worked with F&B managers to ensure covers and tables were ready ahead of service.",
+        "Trained new reception team members on Soho House service standards and phone systems.",
+        "Built relationships with members and guests, surfacing feedback to management to help maintain Soho House's hospitality standards.",
         "Created spreadsheets of member-based information to better understand and accommodate member needs.",
       ],
     },
