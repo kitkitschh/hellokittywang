@@ -33,3 +33,85 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* Brief RGB-split glitch burst on the homepage title. Sits static the vast
+   majority of the cycle and only "glitches" for a fraction of a second every
+   few seconds, so it reads as an occasional flicker rather than a constant
+   shake. The two duplicate layers (data-text) are colored and clipped into
+   thin horizontal bands that jump slightly out of alignment during the
+   burst, then snap back to invisible/aligned. */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glitch-text::before {
+  color: #ff2e6c;
+  animation: glitchBefore 6s infinite linear;
+}
+
+.glitch-text::after {
+  color: #33e6ff;
+  animation: glitchAfter 6s infinite linear;
+}
+
+@keyframes glitchBefore {
+  0%, 90%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 100% 0);
+  }
+  91% {
+    opacity: 0.85;
+    transform: translate(-3px, -1px);
+    clip-path: inset(10% 0 60% 0);
+  }
+  92.5% {
+    opacity: 0.85;
+    transform: translate(2px, 1px);
+    clip-path: inset(45% 0 20% 0);
+  }
+  94% {
+    opacity: 0.85;
+    transform: translate(-2px, 0);
+    clip-path: inset(70% 0 5% 0);
+  }
+  95%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitchAfter {
+  0%, 90.5%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 100% 0);
+  }
+  91.5% {
+    opacity: 0.85;
+    transform: translate(3px, 1px);
+    clip-path: inset(25% 0 40% 0);
+  }
+  93% {
+    opacity: 0.85;
+    transform: translate(-2px, -1px);
+    clip-path: inset(55% 0 15% 0);
+  }
+  94.5% {
+    opacity: 0.85;
+    transform: translate(2px, 0);
+    clip-path: inset(5% 0 80% 0);
+  }
+  95.5%, 100% {
+    opacity: 0;
+  }
+}
