@@ -4,7 +4,7 @@ import HorizontalScrollGallery from "@/components/HorizontalScrollGallery";
 import VimeoEmbed from "@/components/VimeoEmbed";
 import { exhibitionDocumentation } from "@/data/content";
 
-export const metadata = { title: "Kitty Wang - Contemporary Art" };
+export const metadata = { title: "Kitty Wang - Exhibitions" };
 
 function getImages(folder, alt) {
   const dir = path.join(process.cwd(), "public", "images", folder);
@@ -56,7 +56,7 @@ export default function ContemporaryArtPage() {
   return (
     <div>
       <div className="fixed inset-0 -z-10 gradient-bg" aria-hidden="true" />
-      <h1 className="text-2xl uppercase tracking-widest font-serif mb-12">Contemporary Art</h1>
+      <h1 className="text-2xl uppercase tracking-widest font-serif mb-12">Exhibitions</h1>
 
       <div className="flex flex-col">
         {exhibitionDocumentation.map((e) => (
