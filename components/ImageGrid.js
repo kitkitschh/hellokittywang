@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+import { getGalleryImages } from "@/lib/getGalleryImages";
 
 // Reads images directly from /public/images/<folder> at build time so Kitty
 // can just drop exported files into the matching folder in the media dump
@@ -7,16 +6,7 @@ import path from "path";
 // grid (CSS columns) so each photo keeps its own original aspect ratio
 // instead of being cropped to a fixed shape.
 export default function ImageGrid({ folder, alt = "" }) {
-  const dir = path.join(process.cwd(), "public", "images", folder);
-  let files = [];
-  try {
-    files = fs
-      .readdirSync(dir)
-      .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-      .sort();
-  } catch (e) {
-    files = [];
-  }
+  const files = getGalleryImages(folder);
 
   if (files.length === 0) {
     return (
@@ -28,15 +18,10 @@ export default function ImageGrid({ folder, alt = "" }) {
 
   return (
     <div className="columns-2 md:columns-3 gap-4">
-      {files.map((f) => (
-        <div key={f} className="mb-4 break-inside-avoid bg-ink/5">
+      {files.map((src) => (
+        <div key={src} className="mb-4 break-inside-avoid bg-ink/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`/images/${folder}/${f}`}
-            alt={alt}
-            loading="lazy"
-            className="block w-full h-auto"
-          />
+          <img src={src} alt={alt} loading="lazy" className="block w-full h-auto" />
         </div>
       ))}
     </div>

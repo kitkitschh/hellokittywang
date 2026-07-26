@@ -1,7 +1,20 @@
-import ImageGrid from "@/components/ImageGrid";
+import ScrollTiltedGrid from "@/components/ScrollTiltedGrid";
+import { getGalleryImages } from "@/lib/getGalleryImages";
 import { eventPhotographyGalleries, eventPhotographyFolder } from "@/data/content";
 
 export const metadata = { title: "Kitty Wang - Events & Photography" };
+
+function Gallery({ folder, alt }) {
+  const images = getGalleryImages(folder).map((src) => ({ src, alt }));
+  if (images.length === 0) {
+    return (
+      <div className="border border-dashed border-ink/20 rounded p-8 text-sm text-ink/50">
+        Drop images into <code className="px-1">/public/images/{folder}</code> to display them here.
+      </div>
+    );
+  }
+  return <ScrollTiltedGrid images={images} />;
+}
 
 export default function EventsPage() {
   return (
@@ -17,13 +30,13 @@ export default function EventsPage() {
           <div key={g.title}>
             <h2 className="text-lg font-medium">{g.title}</h2>
             {g.date && <p className="text-sm text-ink/60 mb-4">{g.date}</p>}
-            <ImageGrid folder={g.imageFolder} alt={g.title} />
+            <Gallery folder={g.imageFolder} alt={g.title} />
           </div>
         ))}
 
         <div>
           <h2 className="text-lg font-medium">More Event Photography</h2>
-          <ImageGrid folder={eventPhotographyFolder} alt="Event photography" />
+          <Gallery folder={eventPhotographyFolder} alt="Event photography" />
         </div>
       </div>
     </div>
