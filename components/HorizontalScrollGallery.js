@@ -8,14 +8,16 @@ import { motion, useScroll, useTransform } from "framer-motion";
 // height, auto width) rather than being cropped into a fixed box.
 //
 // The horizontal distance is measured from the row's actual rendered width
-// (not a flat percentage) so every photo scrolls fully into view no matter
-// how many there are or how wide the row ends up being — a fixed percentage
-// like "-95%" only reveals everything for one specific row length. A
-// ResizeObserver keeps that measurement correct as each photo finishes
-// loading and the row's real width changes, plus a small buffer so the very
-// last photo is guaranteed to clear the edge of the screen.
+// versus the actual visible container's width (NOT window.innerWidth — the
+// gallery sits inside the page's centered max-w-5xl column, which is
+// narrower than the browser window on most screens, so using the window
+// width under-shifts the row and clips the last photo). A ResizeObserver
+// keeps both measurements correct as photos finish loading and the row's
+// real width settles, plus a small buffer + trailing spacer so the last
+// photo always fully clears the edge.
 export default function HorizontalScrollGallery({ images = [] }) {
   const targetRef = useRef(null);
+  const containerRef = useRef(null);
   const rowRef = useRef(null);
   const [distance, setDistance] = useState(0);
 
@@ -24,20 +26,22 @@ export default function HorizontalScrollGallery({ images = [] }) {
 
   useEffect(() => {
     const row = rowRef.current;
-    if (!row) return;
+    const container = containerRef.current;
+    if (!row || !container) return;
 
     const BUFFER = 48;
 
     function measure() {
       const rowWidth = row.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      setDistance(Math.max(0, rowWidth - viewportWidth + BUFFER));
+      const containerWidth = container.clientWidth;
+      setDistance(Math.max(0, rowWidth - containerWidth + BUFFER));
     }
 
     measure();
 
     const ro = new ResizeObserver(measure);
     ro.observe(row);
+    ro.observe(container);
     window.addEventListener("resize", measure);
 
     return () => {
@@ -52,7 +56,7 @@ export default function HorizontalScrollGallery({ images = [] }) {
 
   return (
     <section ref={targetRef} className="relative" style={{ height: `${scrollVh}vh` }}>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div ref={containerRef} className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div ref={rowRef} style={{ x }} className="flex items-center gap-4 px-6">
           {images.map((img) => (
             <div key={img.src} className="h-[65vh] flex-shrink-0 bg-ink/5">
